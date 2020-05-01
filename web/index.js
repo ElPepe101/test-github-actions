@@ -15,4 +15,4 @@ app.use(helmet());
 app.use(cache('5 minutes'));
 app.use('/messages', messages);
 
-app.listen(process.env.MESSAGES_APP_SERVER_PORT || 8080);
+app.listen(process.env.MESSAGES_APP_HTTP_PORT || 8080);

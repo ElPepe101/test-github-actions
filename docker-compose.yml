@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    env_file:
+      - .env.web
+    build:
+      dockerfile: Dockerfile
+      context: ./web
+    ports:
+      - "8080:8080"
+    # volumes:
+    #   - /app/node_modules
+    #   - ./server:/app
+    depends_on:
+      - db
+  db:
+    env_file:
+      - .env.db
+    image: mongo:3.6-xenial
+    ports:
+      - 27017:27017
+  aws:
+    env_file:
+      - .env.aws
+    image: amazon/aws-cli:latest
+    #command: sh -c "aws s3 ls s3://"
+    deploy:
+      replicas: 0
