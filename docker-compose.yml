@@ -1,25 +1,48 @@
-version: '3'
+version: '3.4'
+
+x-web-image:
+  &default-web-image
+  node:12-alpine3.11
+x-web-volumes:
+  &default-web-volumes
+  - nodemodules:/usr/src/service/node_modules
+  - .:/usr/src/service
+x-web-wdir:
+  &default-web-wdir
+  /usr/src/service
+
+volumes:
+  nodemodules:
+    external: true
 
 services:
   web:
     env_file:
       - .env.web
-    build:
-      dockerfile: Dockerfile
-      context: ./web
+    image: *default-web-image
+    volumes: *default-web-volumes
+    working_dir: *default-web-wdir
     ports:
       - "8080:8080"
-    # volumes:
-    #   - /app/node_modules
-    #   - ./server:/app
     depends_on:
       - db
+    command: npm run start:dev
+
+  install:
+    image: *default-web-image
+    volumes: *default-web-volumes
+    working_dir: *default-web-wdir
+    deploy:
+      replicas: 0
+    command: npm i
+  
   db:
     env_file:
       - .env.db
     image: mongo:3.6-xenial
     ports:
       - 27017:27017
+  
   aws:
     env_file:
       - .env.aws
