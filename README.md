@@ -40,5 +40,8 @@ $ make install
 $ make dev
 ```
 
-
 This commands will download the images listed on the [docker-compose.yml](./docker-compose.yml) configuration and will install the containers requirements. The service will be available on localhost with the port defined on `MESSAGES_APP_HTTP_PORT` or the 8080 default setting.
+
+## Deploy
+
+`make aws args="aws configure"`

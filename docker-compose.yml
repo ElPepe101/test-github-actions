@@ -18,12 +18,12 @@ volumes:
 services:
   web:
     env_file:
-      - .env.web
+      - .env
     image: *default-web-image
     volumes: *default-web-volumes
     working_dir: *default-web-wdir
     ports:
-      - "8080:8080"
+      - "${MESSAGES_APP_HTTP_PORT}:${MESSAGES_APP_HTTP_PORT}"
     depends_on:
       - db
     command: npm run start:dev
@@ -47,6 +47,6 @@ services:
     env_file:
       - .env.aws
     image: amazon/aws-cli:latest
-    #command: sh -c "aws s3 ls s3://"
+    #command: sh -c "aws ..."
     deploy:
       replicas: 0
