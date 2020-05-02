@@ -1,4 +1,4 @@
-const aws = process.env.AWS_IMSSTANTE_SECRETS || {};
+const aws = JSON.parse(process.env.AWS_IMSSTANTE_SECRETS || "{}");
 console.log('d f', aws);
 
 export const MESSAGES_APP_DB_HOST = aws.MESSAGES_APP_DB_HOST || process.env.MESSAGES_APP_DB_HOST || 'db';
