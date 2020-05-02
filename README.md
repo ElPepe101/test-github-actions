@@ -16,14 +16,14 @@ Add a .env file on project root folder with the following variables:
 NODE_ENV='development'
 
 # HTTP service
-MESSAGES_APP_HTTP_PORT=8080
+MESSAGES_APP_HTTP_PORT=80
 
 # Database link
 MESSAGES_APP_DB_HOST
-MESSAGES_APP_DB_PORT
 MESSAGES_APP_DB_USER
 MESSAGES_APP_DB_PASS
 MESSAGES_APP_DB_SCHEMA
+MESSAGES_APP_DB_CLUSTER=false
 
 # SMS service
 MESSAGES_APP_SMS_
@@ -44,4 +44,8 @@ This commands will download the images listed on the [docker-compose.yml](./dock
 
 ## Deploy
 
-`make aws args="aws configure"`
+using semver:
+
+`git tag -a "..." -m "..."
+
+then create release to trigger github workflow.
