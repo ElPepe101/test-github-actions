@@ -13,7 +13,10 @@
           "awslogs-stream-prefix": "ecs"
         }
       },
-      "entryPoint": [],
+      "entryPoint": [
+        "sh",
+        "-c"
+      ],
       "portMappings": [
         {
           "hostPort": 80,
@@ -21,22 +24,31 @@
           "containerPort": 80
         }
       ],
-      "command": [],
+      "command": [
+        "npm",
+        "run",
+        "start:prod"
+      ],
       "linuxParameters": null,
       "cpu": 256,
-      "environment": [],
+      "environment": [
+        {
+          "name": "MESSAGES_APP_HTTP_PORT",
+          "value": "80"
+        }
+      ],
       "resourceRequirements": null,
       "ulimits": null,
       "dnsServers": null,
       "mountPoints": [],
-      "workingDirectory": null,
+      "workingDirectory": "/usr/src/app",
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
       "memoryReservation": 512,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "nginx:latest",
+      "image": "node:12-alpine3.11",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -53,7 +65,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "nginx"
+      "name": "custom"
     }
   ],
   "placementConstraints": [],
@@ -63,7 +75,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:140683604096:task-definition/first-run-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:140683604096:task-definition/first-run-task-definition:2",
   "family": "first-run-task-definition",
   "requiresAttributes": [
     {
@@ -83,6 +95,12 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
     },
     {
       "targetId": null,
@@ -109,7 +127,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 1,
+  "revision": 2,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
