@@ -32,7 +32,24 @@
       "dnsServers": null,
       "mountPoints": [],
       "workingDirectory": null,
-      "secrets": null,
+      "secrets": [
+        {
+          "name": "MESSAGES_APP_DB_HOST",
+          "valueFrom": "arn:aws:ssm:us-east-1:140683604096:parameter/imsstante/stage/mongo/"
+        },
+        {
+          "name": "MESSAGES_APP_DB_USER",
+          "valueFrom": "arn:aws:ssm:us-east-1:140683604096:parameter/imsstante/stage/mongo/"
+        },
+        {
+          "name": "MESSAGES_APP_DB_PASS",
+          "valueFrom": "arn:aws:ssm:us-east-1:140683604096:parameter/imsstante/stage/mongo/"
+        },
+        {
+          "name": "MESSAGES_APP_DB_SCHEMA",
+          "valueFrom": "arn:aws:ssm:us-east-1:140683604096:parameter/imsstante/stage/mongo/"
+        }
+      ],
       "dockerSecurityOptions": null,
       "memory": null,
       "memoryReservation": 512,
