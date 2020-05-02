@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::140683604096:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::140683604096:user/imsstante-general-user",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -33,19 +33,19 @@
       "secrets": [
         {
           "name": "MESSAGES_APP_DB_HOST",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP"
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP/MESSAGES_APP_DB_HOST"
         },
         {
           "name": "MESSAGES_APP_DB_USER",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP"
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP/MESSAGES_APP_DB_USER"
         },
         {
           "name": "MESSAGES_APP_DB_PASS",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP"
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP/MESSAGES_APP_DB_PASS"
         },
         {
           "name": "MESSAGES_APP_DB_SCHEMA",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP"
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP/MESSAGES_APP_DB_SCHEMA"
         }
       ],
       "dockerSecurityOptions": null,
