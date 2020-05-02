@@ -1,5 +1,4 @@
 const aws = JSON.parse(process.env.AWS_IMSSTANTE_SECRETS || "{}");
-console.log('d f', aws);
 
 export const MESSAGES_APP_DB_HOST = aws.MESSAGES_APP_DB_HOST || process.env.MESSAGES_APP_DB_HOST || 'db';
 export const MESSAGES_APP_DB_PORT = aws.MESSAGES_APP_DB_PORT || process.env.MESSAGES_APP_DB_PORT || 27017;

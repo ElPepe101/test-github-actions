@@ -17,5 +17,3 @@ export const odmOptions = {
 const credentials = MESSAGES_APP_DB_USER && MESSAGES_APP_DB_PASS ? `${MESSAGES_APP_DB_USER}:${MESSAGES_APP_DB_PASS}@` : '';
 const sufix = !MESSAGES_APP_DB_CLUSTER ? '+srv' : '';
 export const odmURI = `mongodb${sufix}://${credentials}${MESSAGES_APP_DB_HOST}/${MESSAGES_APP_DB_SCHEMA}?retryWrites=true&w=majority`;
-
-console.log(odmURI);
