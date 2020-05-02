@@ -24,9 +24,7 @@
       "command": [],
       "linuxParameters": null,
       "cpu": 256,
-      "environment": [
-        { "MESSAGES_APP_HTTP_PORT" : 80 }
-      ],
+      "environment": [],
       "resourceRequirements": null,
       "ulimits": null,
       "dnsServers": null,
