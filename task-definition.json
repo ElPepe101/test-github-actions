@@ -34,7 +34,7 @@
         {
           "name": "AWS_IMSSTANTE_SECRETS",
           "valueFrom": "arn:aws:secretsmanager:us-east-1:140683604096:secret:imsstante/stage/mongo/-NKWjkP"
-        },
+        }
       ],
       "dockerSecurityOptions": null,
       "memory": null,
